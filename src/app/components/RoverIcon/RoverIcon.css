@@ -1,0 +1,98 @@
+.rover {
+  position: relative;
+  width: 60px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rover .track {
+  width: 12px;
+  height: 38px;
+  background: #3d4e57;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.rover .body {
+  width: 24px;
+  height: 38px;
+  background: #c7d2d9;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.4),
+    0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 6px;
+  overflow: hidden;
+}
+
+.rover .sensor {
+  width: 10px;
+  height: 10px;
+  background: #507187;
+  border-radius: 3px;
+  border: 2px solid #000;
+  box-shadow: 0 0 2px #000;
+}
+
+.rover .wheel {
+  width: 8px;
+  height: 8px;
+  background: #8b9ca6;
+  border-radius: 50%;
+  border: 2px solid #000;
+  position: absolute;
+}
+
+.rover .track.left .wheel.top {
+  top: 4px;
+  left: 2px;
+}
+
+.rover .track.left .wheel.bottom {
+  bottom: 4px;
+  left: 2px;
+}
+
+.rover .track.right .wheel.top {
+  top: 4px;
+  right: 2px;
+}
+
+.rover .track.right .wheel.bottom {
+  bottom: 4px;
+  right: 2px;
+}
+
+.rover .body::before,
+.rover .track::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.rover .body::before {
+  border-radius: 10px;
+}
+
+.rover .track::before {
+  border-radius: 8px;
+}

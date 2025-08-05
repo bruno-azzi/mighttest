@@ -1,0 +1,60 @@
+.grid-wrapper {
+  display: "flex";
+  justify-self: center;
+}
+
+.grid {
+  display: grid;
+  gap: 2px;
+  border: 2px solid #2e2e2e;
+  padding: 12px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.05);
+  background-image: url("https://opengameart.org/sites/default/files/Mars%20CH16.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+  position: relative;
+}
+
+.grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background-color 0.2s;
+  box-sizing: border-box;
+}
+
+.cell:hover {
+  background-color: #3a3a3a;
+}
+
+.rover-icon {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.facing-N {
+  transform: rotate(0deg);
+}
+.facing-E {
+  transform: rotate(90deg);
+}
+.facing-S {
+  transform: rotate(180deg);
+}
+.facing-W {
+  transform: rotate(270deg);
+}
